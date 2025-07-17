@@ -9,7 +9,7 @@ Social Streaming Platform - A movies & shows streaming platform with social aspe
 - Bookmarks
 - Sharing movies, shows & watchlists
 
-# tech stacks
+## tech stacks
 Frontend:
 - HTML
 - CSS
