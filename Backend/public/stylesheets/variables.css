@@ -1,0 +1,15 @@
+:root {
+    --primary-color: #873FA5;
+    --secondary-color: #5a5a5a;
+    --accent-color: #BDF71E;
+    --dark-color: #000000;
+    --light-color: #FFFFFF;
+    
+    
+    /* dark theme colors */
+    --font-color: #ffffff;
+    --light-background: #3d3d3d;
+    --dark-background: #1A1A1A;
+    --alert-color: #f62862;
+    --success-color: #67dc1e;
+}
