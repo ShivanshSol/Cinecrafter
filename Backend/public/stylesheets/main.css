@@ -14,6 +14,27 @@ body{
 
 }
 
+/* Loader */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.4s ease;
+}
+
+#loader-wrapper.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
 
 
 /* Header */
@@ -35,6 +56,8 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+
+/* nav-left */
 .nav-left {
     display: flex;
     align-items: center;
@@ -61,6 +84,7 @@ menu a:hover {
     color: var(--accent-color);
 }
 
+/* nav-right */
 .nav-right {
     display: flex;
     align-items: center;
@@ -76,14 +100,7 @@ menu a:hover {
     border-radius: 25px;
     outline: none;
     position: relative;
-    top: -6px;
 }
-
-.search-bar-active {
-    background-color: #292929;
-    border: 2px solid var(--accent-color) !important;
-}
-
 .search-bar{
     width: 250px;
     height: 36px;
@@ -96,6 +113,28 @@ menu a:hover {
     color: white;
     border: none;
 }
+.search button{
+    position: absolute;
+    right: 8px;
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+.search i{
+    font-size: 20px;
+}
+.search .search-btn{
+    display: block;
+}
+.search .clear-btn{
+    display: none;
+}
+
 
 input:-webkit-autofill {
   background-color: #292929 !important; /* Your desired grey */
@@ -105,39 +144,6 @@ input:-webkit-autofill {
   -webkit-text-fill-color: white !important; /* THIS LINE fixes text color */
 }
 
-.search-btn {
-    padding: 6px;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-    border-radius: 50%;
-    display: block;
-    margin-top: 10px;
-}
-
-.clear-btn{
-    padding: 6px;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    cursor: pointer;
-    border-radius: 50%;
-    display: none;
-    margin-top: 10px;
-}
-
-.clear-btn .fa-xmark {
-    color: white;
-}
-
-.nav-right i{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-    top: -4px;
-    font-size: 16px;
-}
 
 .nav-right .profile-img{
     width: 36px;
@@ -150,14 +156,12 @@ input:-webkit-autofill {
 .nav-right .fa-circle-user{
     color: #ffffff;
     font-size: 36px;
-    margin-top: -4px;
     cursor: pointer;
 }
 
 .nav-right .fa-circle-user:hover{
     color: #BDF71E;
     font-size: 36px;
-    /* font-weight: 500; */
 }
 
 

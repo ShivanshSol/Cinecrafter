@@ -21,10 +21,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', (req, res) => {
-  res.render('landing');
+  res.render('landing', { showLoader: false });
 });
 app.get('/home', (req, res) => {
-  res.render('home');
+  res.render('home', { showLoader: true });
 });
 
 const PORT = process.env.PORT || 5000;
