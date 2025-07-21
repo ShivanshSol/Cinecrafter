@@ -22,10 +22,8 @@ main{
     padding-top: 80px; /* Space for fixed header */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
+    align-items: center; 
 }
-
 
 /* Header */
 header{
@@ -299,20 +297,3 @@ footer {
     color: #c2c2c2;
     font-weight: 300;
 }
-
-/* .carousel {
-    width: 100%;
-    height: 500px;
-    position: absolute;
-    top: 100px;
-    overflow: hidden;
-}
-.carousel-item{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: #7d9735;
-} */

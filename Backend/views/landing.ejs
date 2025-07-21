@@ -6,6 +6,7 @@
   <!-- stylesheet -->
   <link rel="stylesheet" href="/stylesheets/main.css">
   <link rel="stylesheet" href="/stylesheets/variables.css">
+  <link rel="stylesheet" href="/stylesheets/landing.css">
   <!-- scripts -->
   <script defer src="/scripts/main.js"></script>
   <!-- fa-icons -->
@@ -22,11 +23,18 @@
   <%- include('partials/header') %>
 
   <main>
-    <h1>Welcome to CineCrafter!</h1>
-    <p>Your personalized streaming platform.</p>
+    <!-- hero banner -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h2>Discover & Stream Millions of Movies, Series & Shows</h2>
+                <p>Enjoy on your TV, mobile, tablet, laptop and more.</p>
+                <button id="explore-now-btn" onclick="redirect()">Explore Now</button>
+            </div>
+        </section>
   </main>
 
   <%- include('partials/footer') %>
   <%- include('partials/toast') %>
+  <%- include('partials/scroll-to-top') %>
 </body>
 </html>
