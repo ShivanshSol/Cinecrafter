@@ -1,5 +1,5 @@
-// Loader
 
+// Loader
   window.addEventListener("load", () => {
     const loader = document.getElementById("loader-wrapper");
     if (loader) {
