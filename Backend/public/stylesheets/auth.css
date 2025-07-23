@@ -1,0 +1,237 @@
+
+body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: -1;
+}
+.logo{
+    width: 240px;
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    padding: 10px;
+    z-index: 100;
+    background-color: rgba(00, 00, 00,0.4);
+    box-shadow: rgba(00, 00, 00, 1) 0px 0px 50px 0px;
+    border-radius: 24px;
+}
+.logo img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.89) 10%,
+        rgba(0, 0, 0, 0.8) 20%,
+        rgba(0, 0, 0, 0.6) 30%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+}
+
+.form-container{
+    width: 400px;
+    height: auto;
+    padding: 32px 40px;
+    border-radius: 12px;
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(24, 20, 25);
+    border: #262626 1px solid;
+    box-shadow: #262626 0px 0px 10px 0px;
+    position: relative;
+    top: -40px;
+}
+form{
+    display: block;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+}
+.form-header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.form-header h1{
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: start;
+    cursor: default;
+}
+
+.form-header i{
+    font-size: 24px;
+    position: relative;
+    top: -8px;
+    color: white;
+}
+.form-header i:hover{
+    font-size: 24px;
+    position: relative;
+    top: -8px;
+    color: var(--alert-color);
+}
+
+.login{
+    display: block;
+}
+
+.signup{
+    display: none;
+}
+
+.input-container{
+    width: 100%;
+    height: auto;
+    padding: 0 16px;
+    margin: 16px 0;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 24px;
+    position: relative;
+}
+
+.input-group{
+    position: relative;
+    width: 100%;
+}
+label{
+    color: #ffffffb0;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    transition: 0.3s;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+input{
+    width: 100%;
+    height: 40px;
+    padding: 0 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: rgb(51, 45, 54);
+    color: #ffffff;
+    border: rgb(146, 146, 146) 1px solid;
+    outline: none;
+}
+
+input:focus{
+    border: #BDF71E 1px solid;
+}
+/* FLOATING EFFECT */
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  padding: 0 4px;
+  left: 12px;
+  top: -12px;
+  font-size: 14px;
+  color: var(--accent-color);
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 20, 25, 0.9) 0%,
+    rgba(24, 20, 25, 0.9) 60%,
+    #332D36 64%,
+    #332D36 100%
+  );
+}
+.submit-form-btn{
+    margin: 40px 0px 24px 0px;
+    width: 100%;
+    height: 42px;
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: #8d24a7;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.submit-form-btn:hover{
+    color: #000;
+    font-weight: 500;
+    transform: scale(1.05);
+    transition: 0.3s;
+    background-color: #BDF71E;
+    box-shadow: #262626 0px 0px 10px 0px;
+}
+
+.submit-form-btn:active{
+    box-shadow: #111111 0px 0px 10px 0px;
+    transform: scale(0.9);
+}
+
+
+a{
+    color: #9d68f2;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+p{  
+    color: #ffffff;
+    margin: 10px 0;
+    text-align: center;
+}
+#signup-error, #login-error{
+    color: rgb(255, 51, 54);
+    font-size: 14px;
+    margin: 8px 0 8px 0;
+    text-align: center;
+}
+/* view-password > eye button */
+.input-group button {     
+    display: block;
+    height: 0px;
+    width: 0px;
+    color: #777777;
+    border: block;
+    position: absolute;
+    right: 28px;
+    top: 14px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+}
+
+.input-group button:hover {
+    color: #aeaeae;
+}

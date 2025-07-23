@@ -23,6 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   res.render('landing', { showLoader: false });
 });
+app.get('/auth', (req, res) => {
+  res.render('auth', { showLoader: true });
+});
 app.get('/home', (req, res) => {
   res.render('home', { showLoader: true });
 });

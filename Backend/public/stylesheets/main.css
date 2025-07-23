@@ -13,11 +13,10 @@ body{
     background-size: cover;
     background-attachment: fixed;
     position: relative;
-
 }
 
 main{
-    min-height: 1500px;
+    min-height: 1000px;
     height: auto;
     padding-top: 80px; /* Space for fixed header */
     display: flex;

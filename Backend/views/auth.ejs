@@ -1,9 +1,128 @@
-<%- include('partials/header') %>
+<html>
 
-<main>
-  <h1>Welcome to CineCrafter!</h1>
-  <p>Your personalized streaming platform.</p>
-</main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinecrafter</title>
+  <!-- favicon -->
+  <link rel="icon" href="/assets/logo/favicon.png" type="image/x-icon">
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <link rel="stylesheet" href="/stylesheets/variables.css">
+  <link rel="stylesheet" href="/stylesheets/auth.css">
+  <!-- scripts -->
+  <script defer src="/scripts/main.js"></script>
+  <!-- fa-icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- lottie -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
 
-<%- include('partials/footer') %>
-<%- include('partials/toast') %>
+<body>
+    <% if (showLoader) { %>
+      <%- include('partials/loader') %>
+    <% } %>
+    <img class="background" src="assets/images/background/bg.png" alt="">
+    <img class="logo" src="assets/logo/logo.png" alt="">
+    <main>
+
+    <section class="form-container">
+      <!-- login form -->
+      <form class="login" id="login-form">
+
+        <div class="form-header">
+          <h1>Login</h1>
+          <i class="fa-solid fa-xmark" onclick="goTOLanding()"></i>
+        </div>
+        <!-- input container -->
+        <div class="input-container">
+            <div class="input-group">
+              <input type="text" id="login-input" name="username" placeholder="" required>
+              <label for="username">Username or Email</label>
+            </div>
+            <div class="input-group">
+              <input type="password" id="login-password" name="password" placeholder="" required>
+              <label for="password">Password</label>
+              <button type="button" class="view-password eye1" title="Show Password"
+                onclick="togglePassword('login-password','eye1'),toggleEye('hide-password')"><i
+                  class="fa-solid fa-eye"></i></button>
+            </div>
+        </div>
+        <p id="error-msg"></p>
+        <button class="submit-form-btn" type="submit">Login</button>
+         
+        <p>Don't have an account? <a id="toSignup">Sign up</a></p>
+        <p class="forgot-password"><a>Forgot Password?</a></p>
+      </form>
+
+
+      <!-- signUp form -->
+       <form class="signup" id="signup-form">
+
+        <div class="form-header">
+          <h1>Sign Up</h1>
+          <i class="fa-solid fa-xmark" onclick="goTOLanding()"></i>
+        </div>
+        <!-- input container -->
+        <div class="input-container">
+          <div class="input-group">
+            <input type="text" id="signup-fullname" name="signup-fullname" placeholder="" required>
+            <label for="signup-fullname">Full Name</label>
+          </div>
+          <div class="input-group">
+            <input type="text" id="signup-username" name="signup-username" placeholder="" required>
+            <label for="signup-username">Username</label>
+          </div>
+          <div class="input-group">
+            <input type="email" id="signup-email" name="signup-email" placeholder="" required
+              pattern="[a-zA-Z0-9._%+-]+@gmail\.com" required>
+              <label for="signup-email">Email</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="signup-password" name="signup-password" placeholder="" required>
+            <label for="signup-password">Password</label>
+            <button type="button" class="view-password eye2" title="Show Password"
+              onclick="togglePassword('signup-password','eye2')"><i class="fa-solid fa-eye"></i></button>
+          </div>
+          <div class="input-group">
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="" required>
+            <label for="confirm-password">Confirm Password</label>
+            <button type="button" class="view-password eye3" title="Show Password"
+              onclick="togglePassword('confirm-password','eye3')"><i class="fa-solid fa-eye"></i></button>
+          </div>
+        </div>
+        <p id="error-msg"></p>
+        <button class="submit-form-btn" type="submit">Login</button>
+         
+        <p>Don't have an account? <a id="toLogin">Sign up</a></p>
+      </form>
+      <!-- Oauth -->
+      <div class="oauth-container"></div>
+    </section>
+      </main>
+  <%- include('partials/toast') %>
+
+  <script>
+    const toSignup = document.getElementById('toSignup');
+    const toLogin = document.getElementById('toLogin');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+
+    toSignup.addEventListener('click', () => {
+      loginForm.style.display = 'none';
+      signupForm.style.display = 'block';
+    });
+
+    toLogin.addEventListener('click', () => {
+      signupForm.style.display = 'none';
+      loginForm.style.display = 'block';
+    });
+
+
+    function goTOLanding() {
+      window.location.href = 'http://localhost:5000/';
+    }
+  </script>
+</body>
+
+</html>
