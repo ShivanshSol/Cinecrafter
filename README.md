@@ -16,5 +16,4 @@ Frontend:
 - JS
 Backend:
 - NodesJS, ExpressJS
-- Mongo DB
-- bcrypt, jwt, CORS, multer 
+- bcrypt, jwt, ejs, multer

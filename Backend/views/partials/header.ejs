@@ -1,35 +1,269 @@
 
     
-    <header>
-        <!-- nav-bar -->
-        <nav>
-            <!-- nav-left -->
-            <section class="nav-left"> 
-                <!-- cinecrafter logo -->
-                <div class="logo">
-                    <a href="/"><img src="/assets/logo/logo.png" alt="logo" ></a>
-                </div>
-                <!-- nav menu -->
-                <menu>
-                    <a href="/movies">Movies</a>
-                    <a href="/series">Series</a>
-                    <a href="/shows">Shows</a>
-                </menu>
-            </section>
-            <!-- nav-right -->
-            <section class="nav-right">
-                <!-- search bar -->
-                <div class="search">
-                    <input id="search-bar" class="search-bar" type="text" placeholder="Search">
-                    <button id="search-btn" class="search-btn" title="Search"><i class="fa-solid fa-magnifying-glass" for="search-bar"></i></button>
-                    <button id="clear-btn" class="clear-btn" title="Clear"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                <!-- user icon -->
-                 <div class="profile-img">
-                    <i class="fa-solid fa-circle-user fa-xl" id="user"></i>
-                 </div>
-            </section>
+<header>
+    <!-- nav-bar -->
+    <nav>
+        <!-- nav-left -->
+        <section class="nav-left"> 
+            <!-- cinecrafter logo -->
+            <div class="logo">
+                <a href="/"><img src="/assets/logo/logo.png" alt="logo" ></a>
+            </div>
+            <!-- nav menu -->
+            <menu>
+                <a href="/movies">Movies</a>
+                <a href="/series">Series</a>
+                <a href="/shows">Shows</a>
+            </menu>
+        </section>
+        <!-- nav-right -->
+        <section class="nav-right">
+            <!-- search bar -->
+            <div class="search-bar">
+                <input id="search-input" class="search-input" name="search-input" type="text" placeholder="Search">
+                <label id="search-btn" class="search-btn" for="search-input" title="Search"><i class="fa-solid fa-magnifying-glass" for="search-bar"></i></label>
+                <button id="clear-search-btn" class="clear-search-btn" title="Clear"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <!-- user icon -->
+             <div class="profile-img" id="profile-img">
+                <i class="fa-solid fa-circle-user fa-xl" id="user"></i>
+             </div>
+        </section>
+    </nav>
+</header>
 
-        </nav>
-    </header>
+<!-- search results -->
+<div id="search-results-container" class="search-results-container" onclick="toggleSearchResults('search-results')">
+    
+    <div class="result-container" id="result-container">
+        <p id="search-message"></p>
+        <div class="result" id="result"></div>
+    </div>
+</div>
+
+
+<style>
+
+    /* Header */
+    header{
+        width: 100%;
+        height: 80px;
+        background-color: var(--dark-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 48px;
+        position:fixed;
+        top: 0;
+        z-index: 1000;
+    }
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* nav-left */
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+    .logo img {
+        height: 48px;
+        width: auto;
+    }
+    .nav-left menu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+    }
+    menu a {
+        display: inline;
+        color: #fff;
+        text-decoration: none;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+    menu a:hover {
+        color: var(--accent-color);
+    }
+
+    /* nav-right */
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+    .search-bar{
+        width: 280px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-input{
+        width: 280px;
+        height: 36px;
+        border: 2px solid #555;
+        border-radius: 25px;
+        padding: 8px 10px 6px 16px;
+        background-color: rgba(0, 0, 0, 0);
+        outline: none;
+        font-size: 16px;
+        transition: 0.3s;
+        color: white;
+        position: relative;
+    }
+    .search-bar button, .search-bar label{
+        position: absolute;
+        top: 7px;
+        right: 8px;
+        height: 24px;
+        width: 24px;
+        border: none;
+        background-color: transparent;
+        color: #ffffff;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        transition: 0.3s;
+        border-radius: 50%;
+        font-size: 20px;
+    }
+    .search-bar button{
+        display: none; /* Initially hidden */
+    }
+    .search-input:focus + .search-btn,
+    .search-input:not(:placeholder-shown) + .search-btn{
+        display: none;
+    }
+    .search-input:focus{
+        border: 2px solid var(--accent-color);
+    }
+
+
+    input:-webkit-autofill {
+      background-color: #292929 !important; 
+      color: #ffffff !important;           
+      transition: background-color 5000s ease-in-out 0s; /* Prevent flash */
+      -webkit-box-shadow: 0 0 0px 1000px #292929 inset !important;
+      -webkit-text-fill-color: white !important; /* this line fixes text color */
+    }
+
+
+    .nav-right .profile-img{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-right .fa-circle-user{
+        color: #ffffff;
+        font-size: 36px;
+        cursor: pointer;
+    }
+
+    .nav-right .fa-circle-user:hover{
+        color: var(--accent-color);
+        font-size: 36px;
+    }
+
+    .search-results-container{
+        position: relative;
+        display: none; /* Initially hidden */
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 80px;
+        right: 0px;
+        z-index: 11;
+        background-color: rgba(0, 0, 0, 0.35);
+    }
+    .search-results-container p{
+        position: absolute;
+        left: 20%;
+        padding: 10px;
+        z-index: 12;
+    }
+
+    .result-container{
+        position: absolute;
+        right: 0;
+        max-width: 60%;
+        min-width: 600px;
+        height: 100vh;
+        display: none;
+        /* display: block; */
+        background-color: #000000;
+        z-index: 10;
+    }  
+    .result{
+        margin: 48px 12px 12px 12px;
+        padding: 12px; 
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: flex-start;
+        overflow-y: scroll;
+        gap: 40px 10px;
+
+    }
+
+    .result .movie-card{
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        position: relative;
+    }
+    .movie-card:hover{
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+    .movie-card .movie-img{
+        height: 300px;
+        width: auto;
+    }
+    .movie-img img{
+        object-fit: cover;
+    }
+    .movie-card .movie-info{
+        text-align: center; margin-top: 5px; display: flex; flex-direction: column; align-items: center; justify-content: start;
+    }
+</style>
+
+
+<script>
+    const searchBtn = document.getElementById('search-btn');
+    const searchClearBtn = document.getElementById('clear-search-btn');
+    const searchInput = document.getElementById('search-input');
+    const searchResultsContainer = document.getElementById('search-results-container');
+    const resultContainer = document.getElementById('result-container');
+
+    searchInput.addEventListener('input', () => {
+        searchClearBtn.style.display = searchInput.value ? 'block' : 'none';
+    });
+
+
+    searchClearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchClearBtn.style.display = 'none';
+        searchResultsContainer.style.display = 'none';
+        resultContainer.style.display = 'none';
+    });
+
+
+
+</script>
 

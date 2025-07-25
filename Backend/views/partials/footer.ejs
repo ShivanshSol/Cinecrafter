@@ -79,3 +79,142 @@
     </section>
 </footer>
 
+<style>
+    /* Footer */
+    footer {
+        width: 100%;
+        height: 420px;
+        background-color: var(--dark-bg-color);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .footer-top {
+        width: 100%;
+        display: flex;
+        gap: 48px;
+        justify-content: center;
+        padding: 40px 180px 0 180px;
+    }
+    .footer-top section{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: calc((100% / 3)- 48px);
+        gap: 32px;
+    }
+    .footer-top section h2{
+        color: #c2c2c2;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 8px;
+        cursor: default;
+    }
+    .footer-left .logo img {
+        height: 34px;
+        width: auto;
+    }
+    .footer-left .footer-links {
+        width: calc(100% - 32px);
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        gap: 32px;
+        margin-top: 10px;
+    }
+    .footer-left .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+    .footer-left .footer-links li {
+        margin-bottom: 8px;
+    }
+    .footer-left .footer-links a{
+        text-decoration: none;
+        color: #747474;
+        cursor: default;
+    }
+    
+    
+    
+    
+    /* footer-middle */
+    
+    .subscribe-content input[type="email"]{
+        height: 32px;
+        padding: 6px 12px;
+        width: 236px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-right: 10px;
+        background-color: #dedede;
+    }
+    .subscribe-content input[type="email"]:focus{
+        border: 2px solid #BDF71E;
+        background-color: #ffffff;
+        color: black;
+    }
+    
+    .subscribe-content button{
+        height: 32px;
+        padding: 6px 12px;
+        background-color: var(--light-bg-color);
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 12px;
+        transition: 0.3s;
+    }
+    .subscribe-content button:hover{
+        background-color: #BDF71E;
+        color: black;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    .subscribe-content button:active{
+        transform: scale(0.9);
+    }
+    
+    .socials .social-links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .social-links a{
+        color: rgb(176, 176, 176);
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    .social-links .fa-instagram, .social-links .fa-x-twitter{
+        font-size: 28px;
+    }
+    .social-links .fa-youtube{
+        font-size: 30px;
+    }
+    .social-links a:hover{
+        color: #f1f1f1;
+    }
+    
+    
+    .footer-bottom {
+        width: 100%;
+        padding: 18px 0;
+        background-color: var(--dark-color);
+        text-align: center;
+        color: #c2c2c2;
+        font-weight: 300;
+    }
+    .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+    }
+</style>

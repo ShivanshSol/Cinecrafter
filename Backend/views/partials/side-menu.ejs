@@ -14,7 +14,7 @@
 <style>
     .side-menu-container {
         display: none; /* Initially hidden */
-        display: block;
+        /* display: block; */
         position: fixed;
         top: 0;
         left: 0;
@@ -57,3 +57,19 @@
         background-color: var(--accent-color);
     }
 </style>
+
+
+<script>
+    const profileImg = document.getElementById('profile-img');
+    const sideMenuContainer = document.getElementById('side-menu-container');
+
+    profileImg.addEventListener('click', () => {
+        sideMenuContainer.style.display = 'block';
+    });
+
+    sideMenuContainer.addEventListener('click', (event) => {
+        if (event.target === sideMenuContainer) {
+            sideMenuContainer.style.display = 'none';
+        }
+    });
+</script>
