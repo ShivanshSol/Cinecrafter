@@ -22,20 +22,32 @@
     <%- include('partials/loader') %>
   <% } %>
 
-  <%- include('partials/header') %>
+  <%- include('partials/header-guest') %>
 
   <main>
     <!-- hero banner -->
-        <section class="hero-banner">
-            <div class="hero-content">
-                <h2>Discover & Stream Millions of Movies, Series & Shows</h2>
-                <p>Enjoy on your TV, mobile, tablet, laptop and more.</p>
-                <button id="explore-now-btn" onclick="redirect()">Explore Now</button>
-            </div>
-        </section>
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2>Discover & Stream Millions of Movies, Series & Shows</h2>
+            <p>Enjoy on your TV, mobile, tablet, laptop and more.</p>
+            <button id="explore-now-btn" onclick="redirect()">Explore Now</button>
+        </div>
+    </section>
+
+    <!-- subscribe to news & updates -->
+    <section class="mail-subscription-section">
+        <div class="mail-subscription-content">
+            <h2>Subscribe to our streaming alerts</h2>
+            <p>Get notified about the latest movies, TV shows and web series.</p>
+            <form id="subscribe-form">
+                <input type="email" placeholder="Enter your email address" method="post" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]\.[a-z]$" required>
+                <button type="submit" id="subscribe-btn" >Subscribe</button>
+            </form>
+        </div>
+    </section>
   </main>
 
-  <%- include('partials/footer') %>
+  <%- include('partials/footer-guest') %>
   <%- include('partials/toast') %>
   <%- include('partials/scroll-to-top') %>
 </body>

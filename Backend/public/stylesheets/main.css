@@ -16,7 +16,7 @@ body{
 }
 
 main{
-    min-height: 1000px;
+    min-height: 500px;
     height: auto;
     padding-top: 80px; /* Space for fixed header */
     display: flex;
@@ -157,14 +157,12 @@ input:-webkit-autofill {
 footer {
     width: 100%;
     height: 420px;
-    background-color: var(--dark-background);
+    background-color: var(--dark-bg-color);
     color: #fff;
-    padding: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    bottom: 0;
+    justify-content: space-between;
 }
 .footer-top {
     width: 100%;
@@ -238,7 +236,7 @@ footer {
 .subscribe-content button{
     height: 32px;
     padding: 6px 12px;
-    background-color: var(--light-background);
+    background-color: var(--light-bg-color);
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -255,12 +253,6 @@ footer {
 .subscribe-content button:active{
     transform: scale(0.9);
 }
-
-
-
-
-
-
 
 .socials .social-links{
     display: flex;
@@ -290,9 +282,11 @@ footer {
     width: 100%;
     padding: 18px 0;
     background-color: var(--dark-color);
-    position: absolute;
-    bottom: 0;
     text-align: center;
     color: #c2c2c2;
     font-weight: 300;
+}
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
 }

@@ -8,8 +8,8 @@
     
     /* dark theme colors */
     --font-color: #ffffff;
-    --light-background: #3d3d3d;
-    --dark-background: #111111;
+    --light-bg-color: #3d3d3d;
+    --dark-bg-color: #111111;
     --alert-color: #f62862;
     --success-color: #67dc1e;
 }

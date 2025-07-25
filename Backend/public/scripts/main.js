@@ -7,4 +7,3 @@
       setTimeout(() => loader.remove(), 500); // optional
     }
   });
-

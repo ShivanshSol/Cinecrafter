@@ -1,0 +1,28 @@
+<!-- views/error.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Error</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #873FA5;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: row;
+    }
+    p{
+        font-size: 160px;
+        font-weight: 800;
+        margin-left: 20px;
+        padding-bottom: 56px;
+    }
+  </style>
+</head>
+<body>
+  <h1><%= errorCode %> - <%= message %></h1> <p>:(</p>
+</body>
+</html>
