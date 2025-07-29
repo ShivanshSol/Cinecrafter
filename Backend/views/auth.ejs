@@ -7,7 +7,7 @@
   <!-- favicon -->
   <link rel="icon" href="/assets/logo/favicon.png" type="image/x-icon">
   <!-- stylesheet -->
-  <link rel="stylesheet" href="/stylesheets/main.css">
+  <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
   <link rel="stylesheet" href="/stylesheets/variables.css">
   <link rel="stylesheet" href="/stylesheets/auth.css">
   <!-- scripts -->
@@ -24,82 +24,82 @@
     <% } %>
     <img class="background" src="assets/images/background/bg.png" alt="">
     <img class="logo" src="assets/logo/logo.png" alt="">
+
     <main>
+      <section class="form-container">
+        <!-- login form -->
+        <form class="login" id="login-form">
 
-    <section class="form-container">
-      <!-- login form -->
-      <form class="login" id="login-form">
+          <div class="form-header">
+            <h1>Login</h1>
+            <i class="fa-solid fa-xmark" onclick="goTOLanding()"></i>
+          </div>
+          <!-- input container -->
+          <div class="input-container">
+              <div class="input-group">
+                <input type="text" id="login-input" name="username" placeholder="" required>
+                <label for="username">Username or Email</label>
+              </div>
+              <div class="input-group">
+                <input type="password" id="login-password" name="password" placeholder="" required>
+                <label for="password">Password</label>
+                <button type="button" class="view-password eye1" title="Show Password"
+                  onclick="togglePassword('login-password','eye1'),toggleEye('hide-password')"><i
+                    class="fa-solid fa-eye"></i></button>
+              </div>
+          </div>
+          <p id="error-msg"></p>
+          <button class="submit-form-btn" type="submit">Login</button>
 
-        <div class="form-header">
-          <h1>Login</h1>
-          <i class="fa-solid fa-xmark" onclick="goTOLanding()"></i>
-        </div>
-        <!-- input container -->
-        <div class="input-container">
+          <p>Don't have an account? <a id="toSignup">Sign up</a></p>
+          <p class="forgot-password"><a>Forgot Password?</a></p>
+        </form>
+
+
+        <!-- signUp form -->
+         <form class="signup" id="signup-form">
+
+          <div class="form-header">
+            <h1>Sign Up</h1>
+            <i class="fa-solid fa-xmark" onclick="goTOLanding()"></i>
+          </div>
+          <!-- input container -->
+          <div class="input-container">
             <div class="input-group">
-              <input type="text" id="login-input" name="username" placeholder="" required>
-              <label for="username">Username or Email</label>
+              <input type="text" id="signup-fullname" name="signup-fullname" placeholder="" required>
+              <label for="signup-fullname">Full Name</label>
             </div>
             <div class="input-group">
-              <input type="password" id="login-password" name="password" placeholder="" required>
-              <label for="password">Password</label>
-              <button type="button" class="view-password eye1" title="Show Password"
-                onclick="togglePassword('login-password','eye1'),toggleEye('hide-password')"><i
-                  class="fa-solid fa-eye"></i></button>
+              <input type="text" id="signup-username" name="signup-username" placeholder="" required>
+              <label for="signup-username">Username</label>
             </div>
-        </div>
-        <p id="error-msg"></p>
-        <button class="submit-form-btn" type="submit">Login</button>
-         
-        <p>Don't have an account? <a id="toSignup">Sign up</a></p>
-        <p class="forgot-password"><a>Forgot Password?</a></p>
-      </form>
+            <div class="input-group">
+              <input type="email" id="signup-email" name="signup-email" placeholder="" required
+                pattern="[a-zA-Z0-9._%+-]+@gmail\.com" required>
+                <label for="signup-email">Email</label>
+            </div>
+            <div class="input-group">
+              <input type="password" id="signup-password" name="signup-password" placeholder="" required>
+              <label for="signup-password">Password</label>
+              <button type="button" class="view-password eye2" title="Show Password"
+                onclick="togglePassword('signup-password','eye2')"><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <div class="input-group">
+              <input type="password" id="confirm-password" name="confirm-password" placeholder="" required>
+              <label for="confirm-password">Confirm Password</label>
+              <button type="button" class="view-password eye3" title="Show Password"
+                onclick="togglePassword('confirm-password','eye3')"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+          <p id="error-msg"></p>
+          <button class="submit-form-btn" type="submit">Sign Up</button>
 
-
-      <!-- signUp form -->
-       <form class="signup" id="signup-form">
-
-        <div class="form-header">
-          <h1>Sign Up</h1>
-          <i class="fa-solid fa-xmark" onclick="goTOLanding()"></i>
-        </div>
-        <!-- input container -->
-        <div class="input-container">
-          <div class="input-group">
-            <input type="text" id="signup-fullname" name="signup-fullname" placeholder="" required>
-            <label for="signup-fullname">Full Name</label>
-          </div>
-          <div class="input-group">
-            <input type="text" id="signup-username" name="signup-username" placeholder="" required>
-            <label for="signup-username">Username</label>
-          </div>
-          <div class="input-group">
-            <input type="email" id="signup-email" name="signup-email" placeholder="" required
-              pattern="[a-zA-Z0-9._%+-]+@gmail\.com" required>
-              <label for="signup-email">Email</label>
-          </div>
-          <div class="input-group">
-            <input type="password" id="signup-password" name="signup-password" placeholder="" required>
-            <label for="signup-password">Password</label>
-            <button type="button" class="view-password eye2" title="Show Password"
-              onclick="togglePassword('signup-password','eye2')"><i class="fa-solid fa-eye"></i></button>
-          </div>
-          <div class="input-group">
-            <input type="password" id="confirm-password" name="confirm-password" placeholder="" required>
-            <label for="confirm-password">Confirm Password</label>
-            <button type="button" class="view-password eye3" title="Show Password"
-              onclick="togglePassword('confirm-password','eye3')"><i class="fa-solid fa-eye"></i></button>
-          </div>
-        </div>
-        <p id="error-msg"></p>
-        <button class="submit-form-btn" type="submit">Sign Up</button>
-         
-        <p>Don't have an account? <a id="toLogin">Login</a></p>
-      </form>
-      <!-- Oauth -->
-      <div class="oauth-container"></div>
-    </section>
-      </main>
+          <p>Don't have an account? <a id="toLogin">Login</a></p>
+        </form>
+        <!-- Oauth -->
+        <div class="oauth-container"></div>
+      </section>
+    </main>
   <%- include('partials/toast') %>
 
   <script>

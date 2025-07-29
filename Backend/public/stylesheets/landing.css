@@ -1,6 +1,7 @@
 main{
     height: auto;
 }
+
 /* hero-banner */
 
 .hero-banner{
@@ -62,17 +63,8 @@ main{
     transform: scale(1);
 }
 
-    .footer-top{
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-
-
-
 
 /* Subscribe to newsletters */
-
 .mail-subscription-section{
     width: 100%;
     height: 420px;
@@ -138,4 +130,273 @@ main{
 
 .mail-subscription-content button:active{
     transform: scale(0.9);
+}
+
+.footer-top{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* media-query */
+
+/* Tablet (≤ 1024px or 768px) */
+@media (max-width: 768px)  {
+
+/* hero-banner */
+.hero-banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 360px;
+    background-image: url('/assets/images/background/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-content{
+    padding: 120px 0 0 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h2{
+    padding: 0 16px;
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.hero-content p{
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.hero-content button{
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    background-color: #873FA5;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+/* Subscribe to newsletters */
+
+.mail-subscription-section{
+    width: 100%;
+    height: 420px;
+    padding: 40px 40px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #333;
+}
+
+.mail-subscription-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    color: #fff;
+}
+
+.mail-subscription-content h2{
+    font-size: 32px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.mail-subscription-content p{
+    font-size: 18px;
+    color: #d9d9d9;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.mail-subscription-content input[type="email"]{
+    height: 40px;
+    padding: 6px 16px;
+    width: 320px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.mail-subscription-content button{
+    height: 40px;
+    padding: 6px 16px;
+    background-color: #658419;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+  footer{
+    width: 100%;
+    height: auto;
+  }
+  .footer-top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 24px 36px 24px;
+  }
+  .footer-top section{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-left{
+    width: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-left .logo{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    padding-left: 24px;
+  }
+    .footer-left .footer-links{
+    width: fit-content;
+    padding: 0;
+  }
+
+}
+
+/* Mobile (≤ 768px or 480px) */
+@media (max-width: 480px) {
+
+    main{
+        padding-top: 0px;
+    }
+
+    /* hero-banner */
+    .hero-banner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 360px;
+        background-image: url('/assets/images/background/bg.png');
+        background-size: 200vw;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .hero-content{
+        padding: 30vw 0 0 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: #fff;
+    }
+
+    .hero-content h2{
+        padding: 0 16px;
+        font-size: 24px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .hero-content p{
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+
+    /* Subscribe to newsletters */
+    .mail-subscription-section{
+        width: 100%;
+        height: auto;
+        padding: 40px 24px 80px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #333;
+    }
+
+    .mail-subscription-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+        color: #fff;
+    }
+
+    form{
+        width: fixed;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px;
+    }
+    .mail-subscription-content h2{
+        font-size: 20px;
+        color: #ffffff;
+        text-align: left;
+        margin-bottom: 16px;
+    }
+
+    .mail-subscription-content p{
+        font-size: 14px;
+        color: #d9d9d9;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .mail-subscription-content input[type="email"]{
+        height: 32px;
+        padding: 6px 12px;
+        width: 240px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .mail-subscription-content button{
+        height: 32px;
+        padding: 4px 12px 8px 12px;
+        background-color: #658419;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: 0.3s;
+        text-align: center;
+    }
+    .footer-left .footer-links{
+        width: fit-content;
+        /* padding: 0 56px; */
+    }
 }
